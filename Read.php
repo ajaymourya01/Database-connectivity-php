@@ -18,7 +18,8 @@ include ("config.php");
 $query = "Select * From student";
 $result=mysqli_query($con,$query);
 
-echo "<table border='1' width='100%' height='50px' cellspacing='0'>
+echo "<table border='1' width='100%' height='50px' cellspacing='0' id='main'>
+<tr><button class='add'><a href='Create.php'>New Entry</a> </button> </tr>
 <th  bgcolor='yellow'> S.No. </th>
 <th  bgcolor='yellow'> Student Name</th>
 <th  bgcolor='yellow'> Date of Birth </th>
@@ -43,14 +44,53 @@ while($data= mysqli_fetch_assoc($result))
     <td> ".$data['address']."</td>
     <td> ".$data['phone']."</td>
     <td> ".$data['email']."</td>
-   <div > <td> <button><a href='update.php?sid=$data[sid];'>Update</a></button></td></div>
-   <div > <td> <button> <a href='delete.php?sid=$data[sid];'>Delete</a></button></td></div>
+    <td> <button class='up'><a href='update.php?sid=$data[sid];'>Update</a></button> </td>
+   <td><button class='de'> <a href='delete.php?sid=$data[sid];'>Delete</a></button></td>
 
   
     </tr>";
     
 }
 echo"</table>";
-echo"<button><a href='Create.php'>New Entry</a> </button>";
+
 
 ?>
+
+
+<style>
+
+#main{text-align:center;}
+.add  {background:#ebcc34;
+font-size:20px;
+font-weight:bold;
+
+}
+button a {
+    text-decoration:none;
+}
+
+
+.up{background:green;
+font-size:15px;
+font-weight:bold;
+font-style: normal;
+
+}
+
+.up a{color:white;
+text-decoration:none;}
+.de a{color:white;
+    text-decoration:none;
+}
+
+.de{background:red;
+font-size:15px;
+font-weight:bold;}
+
+th{background:#9fd3c7;
+text-align:center
+
+}
+
+
+    </style>

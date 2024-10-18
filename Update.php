@@ -44,7 +44,7 @@ $query="Select * from student where sid='$sid'";
 
                 <tr>
                     <td>Gender</td>
-                    <td><input type="radio" name="ok" value="<?php echo $result['gender'];?>" > Male <input type="radio" name="ok" value="<?php echo $result['gender'];?>" >Female</td>
+                    <td><input type="radio" name="ok" value="<?php echo $result['gender'];?> " > Male <input type="radio" name="ok" value="<?php echo $result['gender'];?>" >Female</td>
                 </tr>
 
                 <tr>
